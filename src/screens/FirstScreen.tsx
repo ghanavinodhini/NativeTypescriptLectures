@@ -1,18 +1,20 @@
 import React from 'react'
-import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View,TouchableOpacity, SafeAreaViewBase, SafeAreaView } from 'react-native'
 import { tokens } from '../../helpers/translation/appStrings'
 import { translate } from '../../helpers/translation/translationConfig'
+import { MaterialIcons } from '@expo/vector-icons'
 
 const FirstScreen:  React.FC = (props:any) => {
     return (
-        <View>
+        <SafeAreaView>
             <Text>{translate(tokens.screens.screen1.mainText)}</Text>
             <TouchableOpacity
                     style={styles.btnStyle}
                     onPress={() => props.navigation.navigate("SecondScreen")}>
+                      <MaterialIcons name="arrow-forward" size={30} color="red" />
             <Text style={styles.buttonText}>{translate(tokens.screens.screen1.buttonText)}</Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     )
 }
 
